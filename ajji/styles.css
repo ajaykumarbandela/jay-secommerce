@@ -1,0 +1,228 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Basic styles for the header */
+header {
+  background-color: #1590a6;
+  color: #fff;
+  padding: 15px 0;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img { /* Adjust size as needed */
+  width: 50px;
+  border-inline-end-style: initial;
+  border-radius: 25px;
+}
+
+.navigation ul {
+  list-style: none;
+}
+
+.navigation ul li {
+  display: inline;
+  margin-right: 30px;
+}
+
+.navigation ul li a {
+  color:cyan;
+  text-decoration:indianred;
+}
+.user-actions.navigation ul li a:hover{
+  background-color: red;
+  color: #555;
+
+}
+
+.user-actions .btn {
+  padding: 8px 15px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: red;
+  border: 1px solid #fff;
+  border-radius: 4px;
+}
+
+.user-actions .btnprimary {
+  padding: 8px 15px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: red;
+  border: 1px solid #fff;
+  border-radius: 4px;
+}
+
+.user-actions .btn:hover {
+  background-color: #fff;
+  color: gold;
+}
+/* Assuming your background image is stored in a folder named 'images' */
+Body {
+  /* Other styles */
+  background-image: url('DSGNE1248.JPG');
+  background-size: cover; /* Adjust to your preference */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Basic styles for the page */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+header {
+  background-color: #383727;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-image: url("IMG_0105.JPG");
+  background-position:center;
+  background-size: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.product {
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  background-color: aliceblue;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-weight: bold;
+  color: #333;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+buttn:hover {
+  background-color: #555;
+}
+ .user-actions  title:hover  {
+  color: goldenrod;
+
+}
+.bn5 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.bn5:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowingbn5 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowingbn5 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.bn5:active {
+  color: #000;
+}
+
+.bn5:active:after {
+  background: transparent;
+  content:"" ;
+}
+
+.bn5:hover:before {
+  opacity: 1;
+}
+
+.bn5:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #191919;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}

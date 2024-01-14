@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart</title>
+    <!-- Add any necessary CSS -->
+</head>
+<body>
+    <!-- Cart items display -->
+    <div class="cart-items">
+        <!-- Display added items here -->
+        <!-- Example:
+        <div class="cart-item">
+            Product 1
+            Price: $10
+            Quantity: 2
+        </div>
+        -->
+    </div>
+    
+    <!-- Cart total -->
+    <div class="cart-total">
+        <!-- Total price of items -->
+        <!-- Example: Total: $20 -->
+    </div>
+
+    <!-- Add more products similarly -->
+  </div>
+    
+      <div class="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="cart-total">0</span></p>
+        <button onclick="clearCart()">Clear Cart</button>
+        <button onclick="placeOrder()">Order</button>
+      </div>
+    
+      <div class="orders">
+        <h2>Orders</h2>
+        <ul id="order-items"></ul>
+      </div>
+    
+      <script>
+        function addToCart(productName, price) {
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          cart.push({ name: productName, price: price });
+          localStorage.setItem('cart', JSON.stringify(cart));
+          updateCart();
+        }
+    
+        function updateCart() {
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          let cartItemsElement = document.getElementById('cart-items');
+          let cartTotalElement = document.getElementById('cart-total');
+          let cartTotal = 0;
+    
+          cartItemsElement.innerHTML = '';
+          cart.forEach(item => {
+            let listItem = document.createElement('li');
+            listItem.textContent = `${item.name} - $${item.price}`;
+            cartItemsElement.appendChild(listItem);
+            cartTotal += item.price;
+          });
+    
+          cartTotalElement.textContent = cartTotal;
+        }
+    
+        function clearCart() {
+          localStorage.removeItem('cart');
+          updateCart();
+        }
+    
+        function placeOrder() {
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          let orders = JSON.parse(localStorage.getItem('orders')) || [];
+    
+          if (cart.length > 0) {
+            orders.push(...cart); // Move cart items to orders
+            localStorage.setItem('orders', JSON.stringify(orders));
+            clearCart(); // Clear cart after placing order
+            updateOrders(); // Update orders list
+          } else {
+            alert('Your cart is empty. Please add items before placing an order.');
+          }
+        }
+    
+        function updateOrders() {
+          let orders = JSON.parse(localStorage.getItem('orders')) || [];
+          let orderItemsElement = document.getElementById('order-items');
+    
+          orderItemsElement.innerHTML = '';
+          orders.forEach(item => {
+            let listItem = document.createElement('li');
+            listItem.textContent = `${item.name} - $${item.price}`;
+            orderItemsElement.appendChild(listItem);
+          });
+        }
+    
+        window.onload = function() {
+          updateCart();
+          updateOrders();
+        };
+      </script>
+    </body>
+    </html>
+    
+
+  </body>
+  </html>
+  
